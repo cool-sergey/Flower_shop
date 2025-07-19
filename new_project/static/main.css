@@ -1,0 +1,332 @@
+/* Makeshift CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    /* transition: 0.5s;
+    outline: 2px solid red; */
+}
+
+/* Tell the VERY OLD browser to render HTML 5 elements as block */
+header,
+footer,
+aside,
+nav,
+article {
+    display: block;
+}
+
+hr {
+    margin-top: 2px;
+}
+
+body {
+    background-color: #acccd391;
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+    background-size: 50px 50px;
+    margin: 0 auto;
+    width: 95%;
+    /* Лучше 95% т.к. 1100px -- совершенно НЕ АДАПТИВНО!!! Стоило бы задать, например, 95% */
+    font: 1rem/2rem Helvetica, Arial, sans-serif;
+
+}
+
+
+
+h2 {
+    font-size: 2.5rem;
+    /* это -- совершенно НЕ АДАПТИВНО!!! Потому, что в абсолютных единицах.*/
+    line-height: 44px;
+    padding: 23px 0;
+    margin-top: 4%;
+}
+
+h3 {
+    font-size: 2rem;
+    line-height: 22px;
+    padding: 11px 0;
+}
+
+p {
+    padding-bottom: 22px;
+}
+
+nav {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background-color: #111;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    justify-content: space-around;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    background: #111;
+
+}
+
+
+
+nav ul li a {
+    font-size: 1.2rem;
+    line-height: 44px;
+    text-decoration: none;
+    color: #777;
+}
+
+nav ul li a:hover {
+    color: #fff;
+}
+
+nav ul li.selected a {
+    color: #fff;
+}
+
+
+nav ul li.subscribe {
+    padding-left: 30px;
+    background: url("pic/rss.png") left center no-repeat;
+}
+
+header#qwerty {
+    padding-left: 2%;
+    padding-bottom: 2%;
+    padding-top: 4%;
+}
+
+#intro h2,
+#intro p {
+    width: 30%;
+}
+
+#intro h2 {
+    padding: 0 0 22px 0;
+    font-weight: normal;
+    color: #fff;
+}
+
+#intro p {
+    padding: 0;
+    color: #d9f499;
+}
+
+#intro {
+    margin-top: 5%;
+    padding: 5%;
+    background: #467612 url("pic/intro_background.png") repeat-x;
+    background-size: 100%;
+    font-size: 1.;
+    border-radius: 22px;
+}
+
+/*/////////////////////////////////////////////*/
+
+#content {
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+
+
+
+aside {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.blogPost div {
+    column-count: 2;
+    column-gap: 3%;
+    padding-right: 3%;
+}
+
+.blogPost {
+    column-count: 2;
+    column-gap: 22px;
+}
+
+.blogPost header {
+    column-span: all;
+}
+
+.blogPost img {
+    margin-left: 1%;
+    width: 95%;
+    box-shadow: 3px 3px 7px #777;
+}
+
+
+section#comments article:nth-child(2n+1) {
+    padding: 21px;
+    background: #E3E3E3;
+    border: 1px solid #d7d7d7;
+    opacity: 0.6;
+}
+
+/* имедж боксы */
+
+.imageBox {
+    border: 1px solid limegreen;
+    height: 200px;
+    overflow: hidden;
+    width: 350px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.imageBox h3,
+.imageBox p {
+    position: absolute;
+    transition: .8s;
+    color: rgb(213, 229, 230);
+    background-color: rgba(37, 37, 47, 0.478);
+    top: 60%;
+    margin-left: 1px;
+    transform: translateX(-120%);
+}
+
+.imageBox:hover img {
+    transform: scale(1.2);
+    filter: grayscale(.75);
+
+
+}
+
+.imageBox:hover h3,
+.imageBox:hover p {
+    transform: translateX(0);
+}
+
+.imageBox h3 {
+    top: 15%;
+
+}
+
+.imageBox img {
+    min-width: 100%;
+    max-width: 100%;
+    transition: .5s;
+}
+
+/* /////////////////////////////////////////////////////////////// */
+
+
+#gallery {
+    margin-top: 4%;
+    margin-bottom: 4%;
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+aside section {
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+    width: 70%;
+    border: 2px solid black;
+    padding: 5%;
+    margin-top: 7%;
+    border-radius: 4px;
+}
+
+aside section ul {
+    list-style: none;
+    padding-left: 15%;
+}
+
+aside section li {
+    list-style-type: none;
+    padding-left: 15%;
+}
+
+/* //////////FOOTER/////////// */
+
+
+
+footer {
+    position: absolute;
+    left: 0;
+    background-color: #111;
+}
+
+
+footer header h3 {
+    color: #fff;
+}
+
+footer p {
+    color: #949393;
+    padding-right: 5%;
+}
+
+footer a {
+    color: #b9b9b9;
+}
+
+
+footer div {
+    padding: 4%;
+    display: flex;
+}
+
+footer section {
+    flex-basis: 33%;
+}
+
+footer ul li {
+    color: #949393;
+}
+
+footer ul {
+    padding-left: 15%;
+}
+
+
+
+@media (max-width: 860px) {
+    h2 {
+        font-size: 1.7rem;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    nav ul li a {
+        font-size: 1rem;
+    }
+
+    #comments article {
+        grid-template-rows: 30% 70%;
+        grid-template-columns: auto;
+
+    }
+
+    #comments article header a {
+        display: inline;
+    }
+
+    #content {
+        grid-template-rows: 1fr;
+        grid-template-columns: auto;
+    }
+
+    aside {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+
+}

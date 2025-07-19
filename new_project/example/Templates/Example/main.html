@@ -1,0 +1,281 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel="stylesheet" href="{% static 'main.css' %}">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{title}}</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link type="image/x-icon" href="{% static "pic\icons8-спа-цветок-48.png" %}" rel="shortcut icon">
+	<link type="Image/x-icon" href="{% static "pic\icons8-спа-цветок-48.png" %}" rel="icon">
+
+</head>
+
+<body>
+
+	<header id="qwerty">
+		<h1>The Flower Blog</h1>
+	</header>
+	<nav>
+		<ul>
+			<li class="selected"><a href="#">Blog</a></li>
+			<li><a href="{% url 'simple' %}">About</a></li>
+			<li><a href="#">Archives</a></li>
+			<li><a href="{% url "list" %}">To Do List</a></li>
+			<li class="subscribe"><a href="#">Subscribe via. RSS</a></li>
+		</ul>
+	</nav>
+	<header>
+		<h2>Do you love flowers as much as we do?</h2>
+	</header>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+		eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+		minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+	<img1 src="{% static 'pic/intro_flower.png' %}" alt="Flower">
+		</section>
+
+		<section id="gallery">
+			{% for flower in flowers %}
+			<div class="imageBox">
+				<img src="{{flower.image}}" alt="{{flower.alt}}">
+				<h3>{{flower.name}}</h3>
+				<p>Цена - {{flower.price}}$</p>
+			</div>
+			{% endfor%}
+		</section>
+
+		<div id="content">
+			<div id="mainContent">
+				<section>
+					<article class="blogPost">
+						<header>
+							<h2>This is the title of a blog post. Read carefully ;)</h2>
+							<p>Posted on May 24th 2020 by <a href="#">Serge Barvenov</a> - <a href="#comments">3
+									comments</a></p>
+						</header>
+						<div>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
+								euismod tellus eu orci imperdiet nec rutrum lacus blandit. Cras enim
+								nibh, sodales ultricies elementum vel, fermentum id tellus. Proin metus
+								odio, ultricies eu pharetra dictum, laoreet id odio. Curabitur in odio
+								augue. Morbi congue auctor interdum. Phasellus sit amet metus justo.
+								Phasellus vitae tellus orci, at elementum ipsum. In in quam eget diam
+								adipiscing condimentum. Maecenas gravida diam vitae nisi convallis
+								vulputate quis sit amet nibh. Nullam ut velit tortor. Curabitur ut elit
+								id nisl volutpat consectetur ac ac lorem. Quisque non elit et elit
+								lacinia lobortis nec a velit. Sed ac nisl sed enim consequat porttitor.</p>
+
+							<img src="{% static "pic/flower.png" %}" alt="Flower">
+
+							<p>Pellentesque ut sapien arcu, egestas mollis massa. Fusce lectus
+								leo, fringilla at aliquet sit amet, volutpat non erat. Aenean molestie
+								nibh vitae turpis venenatis vel accumsan nunc tincidunt. Suspendisse id
+								purus vel felis auctor mattis non ac erat. Pellentesque sodales
+								venenatis condimentum. Aliquam sit amet nibh nisi, ut pulvinar est. Sed
+								ullamcorper nisi vel tortor volutpat eleifend. Vestibulum iaculis
+								ullamcorper diam consectetur sagittis. Quisque vitae mauris ut elit
+								semper condimentum varius nec nisl. Nulla tempus porttitor dolor ac
+								eleifend. Proin vitae purus lectus, a hendrerit ipsum. Aliquam mattis
+								lacinia risus in blandit.</p>
+
+							<p>Vivamus vitae nulla dolor. Suspendisse eu lacinia justo.
+								Vestibulum a felis ante, non aliquam leo. Aliquam eleifend, est viverra
+								semper luctus, metus purus commodo elit, a elementum nisi lectus vel
+								magna. Praesent faucibus leo sit amet arcu vehicula sed facilisis eros
+								aliquet. Etiam sodales, enim sit amet mollis vestibulum, ipsum sapien
+								accumsan lectus, eget ultricies arcu velit ut diam. Aenean fermentum
+								luctus nulla, eu malesuada urna consequat in. Pellentesque habitant
+								morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+								Pellentesque massa lacus, sodales id facilisis ac, lobortis sed arcu.
+								Donec hendrerit fringilla ligula, ac rutrum nulla bibendum id. Cras
+								sapien ligula, tincidunt eget euismod nec, ultricies eu augue. Nulla
+								vitae velit sollicitudin magna mattis eleifend. Nam enim justo,
+								vulputate vitae pretium ac, rutrum at turpis. Aenean id magna neque. Sed
+								rhoncus aliquet viverra.</p>
+						</div>
+					</article>
+				</section>
+				<section id="comments">
+					<hr>
+					<hr>
+					<h3>Comments</h3>
+					<article>
+						<header>
+							<a href="#">George Washington</a> on <time datetime="2019-06-29T23:35:20+01:00">June 29th
+								2019
+								at 23:35</time>
+						</header>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae expedita quod, in obcaecati
+							voluptates repellat impedit nemo aperiam porro cupiditate. Quos accusantium omnis nisi quia
+							ullam maxime aperiam incidunt, aspernatur esse veritatis dolorum eum eaque facilis
+							consectetur
+							perspiciatis ea velit nam distinctio, officia libero, sequi. </p>
+					</article>
+					<article>
+						<header>
+							<a href="#">Benjamin Franklin</a> on <time datetime="2019-07-29T23:40:09+01:00">Jule 29th
+								2019
+								at 23:40</time>
+						</header>
+						<p>Cumque praesentium, error velit porro aliquid sapiente et, maxime natus voluptates accusamus
+							impedit odio quos asperiores magnam quibusdam itaque ea officiis repudiandae debitis atque
+							eaque
+							ut quisquam nemo doloribus odit? Deleniti, ea, doloremque? </p>
+					</article>
+					<article>
+						<header>
+							<a href="#">Barack Obama</a> on <time datetime="2019-07-30T21:59:00+01:00">Jule 30th 2019 at
+								21:59</time>
+						</header>
+						<p>Molestiae eos, non at accusantium, aliquid labore accusamus iure optio nisi rem sint, libero
+							vel
+							impedit minima. Voluptates similique illum dolor doloribus quia at consequuntur? Saepe
+							reprehenderit, repudiandae ex? Distinctio, temporibus. </p>
+					</article>
+					<article>
+						<header>
+							<a href="#">Baiden </a> on <time datetime="2021-01-29T23:59:00+01:00">June 29th 2009 at
+								23:59</time>
+						</header>
+						<p> At error beatae voluptates enim eligendi consequatur totam, dignissimos esse vero eius
+							impedit,
+							facilis cupiditate doloremque eaque voluptatibus necessitatibus perferendis eveniet
+							provident
+							aperiam veritatis fugiat harum reiciendis, minima. Suscipit, ratione, placeat. </p>
+					</article>
+					<article>
+
+						<header>
+							<a href="#">Luis Lacalle Pou</a> on <time datetime="2019-06-29T23:35:20+01:00">June 29th
+								2020
+								at 23:35</time>
+						</header>
+						<p>Colors have the power to create atmosphere and make an impression.
+							They can be symbols of different meanings and represent our feelings and our personality.
+							In Uruguay we appreciate the beauty of nature and the beautiful colors it gives us.
+							Color combinations have a unique effect on us and our environment.
+							For example, yellow can awaken joy and optimism, red - passion and energy, blue - calm and
+							harmony.
+							We can use colors to express our feelings and ideas, and to create inviting and welcoming
+							spaces. </p>
+					</article>
+					<article>
+
+						<header>
+							<a href="#">Emmerson Mnangagwa</a> on <time datetime="2019-06-29T23:35:20+01:00">June 29th
+								2027
+								at 23:35</time>
+						</header>
+						<p>On behalf of the leader of Zimbabwe, I would like to share with you some thoughts about the
+							beauty of flowers.
+							In our country, we greatly value the natural diversity and splendor that surrounds us.
+							And flowers play an important role in this diversity.
+							In Zimbabwe we take particular pride and value in our native flora.
+							Here you can find flowers of various shades and shapes -
+							from bright and capricious orchids to delicate and sophisticated roses.
+							We are committed to preserving and protecting our natural heritage,
+							including those rare and unique flowers that thrive here.. </p>
+					</article>
+					<hr>
+					<hr>
+
+				</section>
+				<form action="#" method="post">
+					<h3>Post a comment</h3>
+					<p>
+						<label for="name">Name</label>
+						<input name="name" id="name" required type="text">
+					</p>
+					<p>
+						<label for="email">E-mail</label>
+						<input name="email" id="email" required type="email">
+					</p>
+					<p>
+						<label for="website">Website</label>
+						<input name="website" id="website" type="url">
+					</p>
+					<p>
+						<label for="comment">Comment</label>
+						<textarea name="comment" id="comment" required></textarea>
+					</p>
+					<p><input value="Post comment" type="submit"></p>
+				</form>
+			</div>
+			<aside>
+				<section>
+					<header>
+						<h3>Categories</h3>
+					</header>
+					<ul>
+						<li><a href="#">My flowers</a></li>
+						<li><a href="#">Not flowers</a></li>
+						<li><a href="#">Sukkulent</a></li>
+						<li><a href="#">что то</a></li>
+						<li><a href="#">что-то ещё</a></li>
+					</ul>
+				</section>
+				<section>
+					<header>
+						<h3>Archives</h3>
+					</header>
+					<ul>
+						<li><a href="#">December 2018</a></li>
+						<li><a href="#">January 2019</a></li>
+						<li><a href="#">February 2019</a></li>
+						<li><a href="#">March 2019</a></li>
+						<li><a href="#">April 2019</a></li>
+					</ul>
+				</section>
+			</aside>
+		</div>
+		<footer class="column-3">
+			<div>
+				<section id="about">
+					<header>
+						<h3>About</h3>
+					</header>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+						eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+						minim veniam, quis nostrud exercitation ullamco <a href="#">laboris nisi ut aliquip</a>
+						ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+						voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+						sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+						mollit anim id est laborum.</p>
+				</section>
+				<section id="blogroll">
+					<header>
+						<h3>Blogroll</h3>
+					</header>
+					<ul>
+						<li><a href="#">NETTUTS+</a></li>
+						<li><a href="#">FreelanceSwitch</a></li>
+						<li><a href="#">In The Woods</a></li>
+						<li><a href="#">Netsetter</a></li>
+						<li><a href="#">PSDTUTS+</a></li>
+					</ul>
+				</section>
+				<section id="popular">
+					<header>
+						<h3>Popular</h3>
+					</header>
+					<ul>
+						<li><a href="#">This is the title of a blog post</a></li>
+						<li><a href="#">Lorem ipsum dolor sit amet</a></li>
+						<li><a href="#">Consectetur adipisicing elit, sed do eiusmod</a></li>
+						<li><a href="#">Duis aute irure dolor</a></li>
+						<li><a href="#">Excepteur sint occaecat cupidatat</a></li>
+						<li><a href="#">Reprehenderit in voluptate velit</a></li>
+						<li><a href="#">Officia deserunt mollit anim id est laborum</a></li>
+						<li><a href="#">Lorem ipsum dolor sit amet</a></li>
+					</ul>
+				</section>
+			</div>
+		</footer>
+
+
+</body>
+
+</html>
