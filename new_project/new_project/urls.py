@@ -23,3 +23,4 @@ urlpatterns = [
     path('simple',views.simple, name='simple'),
     path('list',views.second,name='list'),
 ]
+######
