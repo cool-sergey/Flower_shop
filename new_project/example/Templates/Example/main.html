@@ -40,7 +40,7 @@
 		<section id="gallery">
 			{% for flower in flowers %}
 			<div class="imageBox">
-				<img src="{{flower.image}}" alt="{{flower.alt}}">
+				<img src="{{flower.image.url}}" alt="{{flower.alt}}">
 				<h3>{{flower.name}}</h3>
 				<p>Цена - {{flower.price}}$</p>
 			</div>

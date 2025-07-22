@@ -3,6 +3,8 @@ from django.db import models
 class FlowerType(models.Model):
     name = models.CharField(max_length = 128, unique = True)
     description = models.TextField(null = True, blank = True)
+    def __str__(self):
+        return self.name
 
 class Product(models.Model):
     name = models.CharField(max_length = 128, unique = True)
@@ -11,6 +13,8 @@ class Product(models.Model):
     quantity = models.PositiveIntegerField(default = 0)
     image = models.ImageField(upload_to = 'flowers_images')
     type = models.ForeignKey(to = FlowerType, on_delete = models.CASCADE )
+    def __str__(self):
+        return f"{self.name} | category: {self.type.name}"
 
     
 

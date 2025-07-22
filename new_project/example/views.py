@@ -1,41 +1,15 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-  
+
+from example.models import FlowerType, Product
+
+
+
 def index(request):
     context ={
         'title':'The Flowers Blog',
-        'flowers': [
-            {
-            'image': 'static/pic/flower1.jpg',
-            'alt': 'Цветок зеленый',
-            'name':'зеленая орхидея',
-            'price':9
-            },
-            {
-            'image': 'static/pic/flower2.jpg',
-            'alt': 'гладиолус',
-            'name':'гладиолус',
-            'price':7
-            },
-            {
-            'image': 'static/pic/flower3.jpg',
-            'alt': 'Лагурус',
-            'name':'Лагурус',
-            'price':5
-            },
-            {
-            'image': 'static/pic/flower4.jpg',
-            'alt': 'Хризантема одноголовая',
-            'name':'Хризантема одноголовая',
-            'price':11
-            },
-            {
-            'image': 'static/pic/flower5.jpg',
-            'alt': 'Гортензия лимонная',
-            'name':'Гортензия лимонная',
-            'price':10
-            }
-            ]
+        'flowers': Product.objects.all(),
+        'type' : FlowerType.objects.all()
         }
     return render(request, "Example\main.html", context)
 #тртетий арг. чтобы можно было встялять данные с помощью слвоворя сразу в шиетмель страницу
