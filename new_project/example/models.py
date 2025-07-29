@@ -15,6 +15,7 @@ class Product(models.Model):
     type = models.ForeignKey(to = FlowerType, on_delete = models.CASCADE )
     def __str__(self):
         return f"{self.name} | category: {self.type.name}"
-
-    
-
+## у нас есть фикстуры, это типо экзмепляр
+# 
+#  базы данных, которую мы можем загрузить при помощи команды
+# manage.py loaddata <путь до фикстуры>
