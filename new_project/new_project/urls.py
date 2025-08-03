@@ -10,7 +10,7 @@ urlpatterns = [
     path('', views.index, name='index'),
 
     path('example/', include('example.urls', namespace='example')),
-    
+    path('users/', include('users.urls', namespace='users')),
 ]
 
 if settings.DEBUG:

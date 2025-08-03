@@ -1,0 +1,60 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{title}}</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link type="image/x-icon" href="{% static "pic\icons8-спа-цветок-48.png" %}" rel="shortcut icon">
+	<link type="Image/x-icon" href="{% static "pic\icons8-спа-цветок-48.png" %}" rel="icon">
+</head>
+<body>
+    <header>
+        <h1>Entrance</h1>
+    </header>
+
+    <main>
+        <h2>Форма регистрации</h2>
+        <form action="/register" method="post">
+            <div>
+                <label for="username">Имя пользователя:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div>
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <div>
+                <label for="confirm_password">Подтвердите пароль:</label>
+                <input type="password" id="confirm_password" name="confirm_password" required>
+            </div>
+
+            <div>
+                <label>
+                    <input type="checkbox" name="agree_terms" required>
+                    Я согласен с условиями использования
+                </label>
+            </div>
+
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+
+        <p>Уже есть аккаунт? <a href="/login">Войти</a></p>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 The Flower Blog</p>
+    </footer>
+</body>
+</html>

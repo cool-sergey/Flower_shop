@@ -87,14 +87,21 @@ nav ul li.selected a {
 }
 
 
-nav ul li.subscribe {
+nav ul li.login {
     padding-left: 30px;
     background: url("pic/rss.png") left center no-repeat;
 }
 
-header#qwerty {
+#qwerty {
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
+    /* Размещает элементы по краям */
+    align-items: center;
+    /* Выравнивает по вертикали */
+    padding: 10px;
+    /* Добавляет отступы для красоты */
+    background: #f0f0f0;
+    /* Фон для наглядности */
     padding-left: 2%;
     padding-bottom: 2%;
     padding-top: 4%;
