@@ -11,7 +11,7 @@ def index(request):
         'flowers': Product.objects.all(),
         'type' : FlowerType.objects.all()
         }
-    return render(request, "Example\main.html", context)
+    return render(request, "Example\index.html", context)
 #тртетий арг. чтобы можно было встялять данные с помощью слвоворя сразу в шиетмель страницу
 
 def about(request, name, age):

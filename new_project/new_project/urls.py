@@ -5,14 +5,12 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 
-
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('about/', views.about, kwargs={'name':'Tom', 'age': 38}),
-    path('simple/',views.simple, name='simple'),
-    path('list/',views.second,name='list'),
     path('admin/', admin.site.urls),
+    path('', views.index, name='index'),
 
+    path('example/', include('example.urls', namespace='example')),
+    
 ]
 
 if settings.DEBUG:

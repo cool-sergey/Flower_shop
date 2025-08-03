@@ -1,3 +1,8 @@
 django_test
-new_project/example/__pycache__
-new_project/new_project/__pycache__
+new_project\example\__pycache__
+new_project\example\migrations\__pycache__
+
+new_project\new_project\__pycache__
+
+new_project\users\__pycache__
+new_project\users\migrations\__pycache__
