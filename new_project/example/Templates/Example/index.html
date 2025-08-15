@@ -8,7 +8,6 @@
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>{{title}}</title>
-	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link type="image/x-icon" href="{% static "pic\icons8-спа-цветок-48.png" %}" rel="shortcut icon">
 	<link type="Image/x-icon" href="{% static "pic\icons8-спа-цветок-48.png" %}" rel="icon">
 
@@ -21,11 +20,10 @@
 	</header>
 	<nav>
 		<ul>
-			<li class="selected"><a href="#">Blog</a></li>
-			<li><a href="{% url 'simple' %}">About</a></li>
-			<li><a href="#">Archives</a></li>
-			<li><a href="{% url "list" %}">To Do List</a></li>
-			<li class="subscribe"><a href="#">Subscribe via. RSS</a></li>
+			<li><a href="{% url 'example:simple' %}">About</a></li>
+			<li><a href="#">Shop</a></li>
+			<li><a href="{% url "example:list" %}">To Do List</a></li>
+			<li class="login"><a href="{% url 'users:login'%}">login</a></li>
 		</ul>
 	</nav>
 	<header>
