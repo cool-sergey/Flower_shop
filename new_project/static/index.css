@@ -19,6 +19,15 @@ hr {
     margin-top: 2px;
 }
 
+#qwerty header {
+    background-color: yellow;
+    background-size: 50px 50px;
+    margin: 0 auto;
+    width: 100%;
+    /* Лучше 95% т.к. 1100px -- совершенно НЕ АДАПТИВНО!!! Стоило бы задать, например, 95% */
+    font: 1rem/2rem Helvetica, Arial, sans-serif;
+}
+
 body {
     background-color: #acccd391;
     background-image: linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);

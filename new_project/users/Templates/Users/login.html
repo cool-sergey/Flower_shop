@@ -18,17 +18,20 @@
     </header>
 
     <main>
-        <form action="/register" method="post">
+        <form action="{% url 'users:login' %}" method="post">
+            {% csrf_token %}
             <div>
-                <label for="username">Имя пользователя:</label>
-                <input type="text" id="username" name="username" required>
+                <label for="{{form.username.id_for_label}}">Имя пользователя:</label>
+                {{form.username}}
+
             </div>
 
             <div>
-                <label for="password">Пароль:</label>
-                <input type="password" id="password" name="password" required>
+                <label for="{{form.password.id_for_label}}">Пароль:</label>
+                {{form.password}}
             </div>
 
+            
             <button type="submit">Войти</button>
         </form>
 
