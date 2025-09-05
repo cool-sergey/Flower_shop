@@ -16,7 +16,14 @@
     <header>
         <h1>Авторизоваться</h1>
     </header>
-
+        {% if form.non_field_errors %}
+        <div class="custom-alert" id="error-alert">
+            <span class="alert-message">{{ form.non_field_errors }}</span>
+            <button class="alert-close" onclick="document.getElementById('error-alert').style.display='none'">
+                ×
+            </button>
+        </div>
+        {% endif %}
     <main>
         <form action="{% url 'users:login' %}" method="post">
             {% csrf_token %}

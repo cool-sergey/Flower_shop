@@ -15,16 +15,30 @@
 
 <body>
 
-	<h1>The Flower Blog</h1>
+	<h1>The Flower Blog {% if user.is_authenticated %} ---  Hello,  {{ user.username}} {%endif%} </h1>
 		
 	<nav>
 		<ul>
 			<li><a href="{% url 'example:simple' %}">About</a></li>
 			<li><a href="#">Shop</a></li>
 			<li><a href="{% url "example:list" %}">To Do List</a></li>
+			{% if user.is_authenticated %}
+			<li class="profile"><a href="{% url 'users:profile'%}">Profile</a>
+				<ul>
+					<li><a href="#">Basket </a></li>
+					<li><a href="{% url 'users:logout' %}">logout </a></li>
+					{% if user.is_superuser or user.is_stuff %}
+					<li><a href="{% url 'admin:index' %}">Admin'ка</a></li>
+					{% endif %}
+				</ul>
+			</li>
+			{% else %}
 			<li class="login"><a href="{% url 'users:login'%}">login</a></li>
+			{% endif %}
 		</ul>
 	</nav>
+
+	
 	<header>
 		<h2>Do you love flowers as much as we do?</h2>
 	</header>
