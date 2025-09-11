@@ -24,6 +24,8 @@ class Bucket(models.Model):
     created_timestamp = models.DateTimeField(auto_now_add = True)
     def __str__(self):
         return f'Пользователь {self.user.email} | Продукт: {self.product.name} '
+    def sum(self):
+        return self.product.price*self.quantity
     
 
 ## у нас есть фикстуры, это типо экзмепляр

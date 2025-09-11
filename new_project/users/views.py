@@ -2,11 +2,14 @@ from django.shortcuts import render, HttpResponseRedirect
 from django.http import HttpResponse
 from django.contrib import auth,messages
 from django.urls import reverse
+from django.contrib.auth.decorators import login_required
 
 
 from users.forms import UserLoginForm, UserRegistrationForm,UserProfileForm
+from example.models import Bucket
 
-# Create your views here.
+
+
 def login_form(request):
     if request.method == 'POST':
         form = UserLoginForm(data = request.POST)
@@ -34,6 +37,7 @@ def reg_form(request):
     context = {'form': form}
     return render(request, r'Users\reg.html',context)
 
+@login_required
 def profile(request):
     if request.method == 'POST':
         form = UserProfileForm(instance = request.user, data = request.POST, files = request.FILES)
@@ -44,9 +48,24 @@ def profile(request):
             print(form.errors)
     else:
         form = UserProfileForm(instance = request.user)
-    context = {'title': 'Store - профиль','form': form}
+        
+    baskets = Bucket.objects.filter(user=request.user)
+    total_sum = sum((basket.sum() for basket in baskets))
+    total_quantity = sum((basket.quantity for basket in baskets))
+
+
+    context = {
+        'baskets': Bucket.objects.filter(user = request.user),
+        'title': 'Store - профиль',
+        'form': form,
+        'total_sum':total_sum,
+        'total_quantity':total_quantity
+        
+        }
     return render(request, r'Users\profile.html', context)
 
+
+@login_required
 def logout(request):
     auth.logout(request)
     return HttpResponseRedirect(reverse('index'))

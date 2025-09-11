@@ -14,7 +14,8 @@
 
 <body>
     <a href="{% url 'index' %}" class="back-link">← Назад</a>
-
+<div class="main-container">
+    
     <div class="profile-container">
         <h4 class="profile-title">Профиль</h4>
 
@@ -45,6 +46,13 @@
             </div>
         </form>
     </div>
+
+    {% include "Example\basket.html" %}
+    
+</div>
+    
+
+    
 </body>
 
 </html>

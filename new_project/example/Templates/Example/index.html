@@ -51,9 +51,11 @@
 		<section id="gallery">
 			{% for flower in flowers %}
 			<div class="imageBox">
-				<img src="{{flower.image.url}}" alt="{{flower.alt}}">
-				<h3>{{flower.name}}</h3>
-				<p>Цена - {{flower.price}}$</p>
+				<a href = "{% url 'example:busket_add' flower.id%}">
+					<img src="{{flower.image.url}}" alt="{{flower.alt}}">
+					<h3>{{flower.name}}</h3>
+					<p>Цена - {{flower.price}}$</p>
+				</a>
 			</div>
 			{% endfor%}
 		</section>

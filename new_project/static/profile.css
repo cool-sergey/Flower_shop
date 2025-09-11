@@ -1,139 +1,62 @@
-/* Общие стили */
 body {
     font-family: "Segoe UI", Tahoma, sans-serif;
     background: #f4f7fb;
     margin: 0;
     padding: 0;
     color: #333;
+    overflow: y;
+    /* убираем скролл со всей страницы */
+    height: 100vh;
+    /* страница ровно на высоту окна */
 }
 
-/* Контейнер профиля */
-.profile-container {
-    max-width: 500px;
+.main-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    /* растягиваем блоки одинаково по высоте */
+    gap: 40px;
     margin: 40px auto;
+    padding: 20px;
+    max-width: 1200px;
+    height: calc(100vh - 130px);
+    /* занимаем всю высоту окна, вычтя отступы */
+    box-sizing: border-box;
+}
+
+.profile-container {
+    flex: 0 0 300px;
+    /* фиксированная ширина */
+    height: 100%;
+    /* высота по контейнеру */
+    max-width: 400px;
     background: #fff;
     border-radius: 15px;
     padding: 30px 25px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
 }
 
-/* Заголовок */
-.profile-title {
-    font-size: 22px;
-    font-weight: 600;
-    color: #2c3e50;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 10px;
-    margin-bottom: 25px;
-    text-align: center;
-}
-
-/* Фото */
-.profile-image-block {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 25px;
-}
-
-.profile-image {
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #5bc0de;
-    transition: transform 0.3s ease;
-}
-
-.profile-image:hover {
-    transform: scale(1.05);
-}
-
-/* Форма */
-.profile-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    /* расстояние между блоками */
-}
-
-/* Группы полей */
-.form-group {
-    display: flex;
-    flex-direction: column;
-}
-
-.form-group label {
-    margin-bottom: 6px;
-    font-weight: 600;
-    color: #444;
-    font-size: 14px;
-}
-
-/* Поля ввода */
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="file"],
-textarea {
-    width: 100%;
-    padding: 12px 14px;
-    border: 1.5px solid #ccc;
-    border-radius: 10px;
-    outline: none;
-    font-size: 15px;
+.info-container {
+    flex: 1;
+    /* занимает всё оставшееся пространство */
+    height: 100%;
+    /* равна профилю */
     background: #fff;
-    transition: border 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    border-radius: 15px;
+    padding: 30px 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+
+    overflow-y: auto;
+    /* скролл только если контента много */
+    overflow-x: hidden;
 }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus,
-input[type="file"]:focus,
-textarea:focus {
-    border-color: #5bc0de;
-    background: #f9feff;
-    box-shadow: 0 0 8px rgba(91, 192, 222, 0.3);
-}
-
-/* Кнопка */
-.form-actions {
-    margin-top: 15px;
-}
-
-.btn-save {
-    width: 100%;
-    padding: 12px;
-    background: #5bc0de;
-    border: none;
-    border-radius: 12px;
-    font-size: 16px;
-    font-weight: 600;
-    color: #fff;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.btn-save:hover {
-    background: #46b8da;
-    transform: translateY(-2px);
-}
-
-.btn-save:active {
-    transform: translateY(0);
-    background: #31a6c2;
-}
-
-button[type="submit"] {
-    background-color: #3b454c;
-    color: white;
-    padding: 0.8rem;
-    border: none;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    margin-top: 0.5rem;
-}
 
 .back-link {
     display: inline-block;
-    margin: 15px 0 0 15px;
+    margin: 20px;
     text-decoration: none;
     font-size: 15px;
     font-weight: 600;
@@ -142,6 +65,7 @@ button[type="submit"] {
     border: 2px solid #5bc0de;
     border-radius: 8px;
     transition: all 0.3s ease;
+    box-sizing: border-box;
 }
 
 .back-link:hover {
@@ -154,4 +78,225 @@ button[type="submit"] {
     transform: translateY(0);
     background: #31a6c2;
     border-color: #31a6c2;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="file"],
+textarea,
+select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    outline: none;
+    font-size: 15px;
+    background: #fff;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="file"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #5bc0de;
+    background: #f9feff;
+    box-shadow: 0 0 8px rgba(91, 192, 222, 0.3);
+}
+
+.btn-save,
+button,
+input[type="submit"] {
+    width: 100%;
+    padding: 12px 14px;
+    background: #5bc0de;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(91, 192, 222, 0.3);
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+
+.btn-save:hover,
+button:hover,
+input[type="submit"]:hover {
+    background: #46b8da;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(91, 192, 222, 0.4);
+}
+
+.btn-save:active,
+button:active,
+input[type="submit"]:active {
+    transform: translateY(0);
+    background: #31a6c2;
+    box-shadow: 0 3px 8px rgba(91, 192, 222, 0.3);
+}
+
+input[type="file"] {
+    border: 2px dashed #5bc0de;
+    background: #f9feff;
+    cursor: pointer;
+    color: #333;
+    box-sizing: border-box;
+}
+
+input[type="file"]::file-selector-button {
+    background: #5bc0de;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 8px 14px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background: #46b8da;
+}
+
+
+input[type="file"] {
+    color: transparent;
+    /* убираем текст справа */
+    width: auto;
+}
+
+input[type="file"]::file-selector-button {
+    background: #5bc0de;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 8px 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background: #46b8da;
+}
+
+
+
+
+/* Сетка карточек */
+.basket-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+}
+
+/* Карточка товара */
+.basket-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 12px;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.basket-card:hover {
+    transform: translateY(-4px);
+}
+
+/* Картинка */
+.basket-img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+/* Название */
+.basket-name {
+    font-size: 16px;
+    margin: 6px 0;
+    font-weight: bold;
+}
+
+/* Цена */
+.basket-price {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Блок кнопок и инпута */
+/* Стили для ссылок-кнопок */
+.basket-actions a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    transition: background 0.2s ease;
+    cursor: pointer;
+}
+
+/* Update-кнопка */
+.btn-update {
+    background: #4caf50;
+    color: white;
+}
+
+.btn-update:hover {
+    background: #43a047;
+}
+
+/* Remove-кнопка */
+.btn-remove {
+    background: #f44336;
+    color: white;
+}
+
+.btn-remove:hover {
+    background: #e53935;
+}
+
+
+
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .profile-container,
+    .info-container {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .back-link {
+        display: inline-block;
+        margin: 40px 20px;
+        /* верх = 40px, по бокам = 20px */
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 600;
+        color: #5bc0de;
+        padding: 8px 14px;
+        border: 2px solid #5bc0de;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        box-sizing: border-box;
+    }
+
 }

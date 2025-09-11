@@ -1,0 +1,27 @@
+<div class="info-container">
+
+    {% if baskets %}
+    <h2>Корзина ------ Общая сумма: {{total_sum}}. Общее количество {{total_quantity}}</h2>
+    {% else %}
+     <h2>Корзина</h2>
+    {% endif %}
+    
+    {% if baskets %}
+        <div class="basket-grid">
+            {% for basket in baskets %}
+                <div class="basket-card">
+                    <img src="{{ basket.product.image.url }}" alt="{{ basket.product.alt }}" class="basket-img">
+                    <h3 class="basket-name">{{ basket.product.name }}</h3>
+                    <p class="basket-price">{{ basket.sum }} $</p>
+                    <div class="basket-actions">
+                        <input type="number" min="0" value="{{ basket.quantity }}" class="basket-quantity">
+                        <a href="#" class="btn-update">Update</a>
+                        <a href="{% url 'example:basket_remove' basket.id %}" class="btn-remove">Remove</a>
+                    </div>
+                </div>            
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>Корзина пуста</p>   
+    {% endif %}
+</div>
