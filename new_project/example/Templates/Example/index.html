@@ -48,6 +48,16 @@
 	<img1 src="{% static 'pic/intro_flower.png' %}" alt="Flower">
 		</section>
 
+
+		<div class="filter-buttons">
+		<a href="{% url 'index' %}" class="filter-btn active">Все</a>
+		{% for type in types %}
+		<a href="{% url 'flowertype' type.id %}" class="filter-btn active">{{type.name}}</a>
+		{% endfor %}
+		</div>
+
+
+
 		<section id="gallery">
 			{% for flower in flowers %}
 			<div class="imageBox">

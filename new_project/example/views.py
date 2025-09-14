@@ -8,11 +8,18 @@ from example.models import FlowerType, Product,Bucket
 
 
 
-def index(request):
+def index(request, flowertype_id=None):
+    if flowertype_id:
+        flowertype = FlowerType.objects.get(id = flowertype_id)
+        product = Product.objects.filter(type = flowertype)
+    else:
+        product = Product.objects.all()
+        
+    
     context ={
         'title':'The Flowers Blog',
-        'flowers': Product.objects.all(),
-        'type' : FlowerType.objects.all()
+        'flowers': product,
+        'types' : FlowerType.objects.all()
         }
     return render(request, r"Example\index.html", context)
 #тртетий арг. чтобы можно было встялять данные с помощью слвоворя сразу в шиетмель страницу
