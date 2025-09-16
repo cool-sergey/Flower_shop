@@ -9,6 +9,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     path('flowertype/<int:flowertype_id>/', views.index, name='flowertype'),
+    path('page/<int:page_number>/', views.index, name='paginator'),    
 
     path('example/', include('example.urls', namespace='example')),
     path('users/', include('users.urls', namespace='users')),

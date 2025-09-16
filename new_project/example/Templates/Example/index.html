@@ -70,13 +70,35 @@
 			{% endfor%}
 		</section>
 
+		<div class="pagination">
+			{% if flowers.has_previous %}
+				<a href="{% url "paginator" flowers.previous_page_number %}" class="page-btn">« Предыдущий</a>
+			{% else %}
+				<span class="page-btn disabled">« Предыдущий</span>
+			{% endif %}
+
+			{% for num in flowers.paginator.page_range %}
+				{% if flowers.number == num %}
+					<span class="page-btn active">{{ num }}</span>
+				{% else %}
+					<a href="{% url 'paginator' num %}" class="page-btn">{{ num }}</a>
+				{% endif %}
+			{% endfor %}
+
+			{% if flowers.has_next %}
+				<a href="{% url "paginator" flowers.next_page_number %}" class="page-btn">Следующий »</a>
+			{% else %}
+				<span class="page-btn disabled">Следующий »</span>
+			{% endif %}
+		</div>
+
 		<div id="content">
 			<div id="mainContent">
 				<section>
 					<article class="blogPost">
 						<header>
 							<h2>This is the title of a blog post. Read carefully ;)</h2>
-							<p>Posted on May 24th 2020 by <a href="#">Serge Barvenov</a> - <a href="#comments">3
+							<p>Posted on May 24th 2020 by <a href="#">Funny Clown</a> - <a href="#comments">3
 									comments</a></p>
 						</header>
 						<div>

@@ -1,24 +1,26 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-
+from django.core.paginator import Paginator
 
 
 from example.models import FlowerType, Product,Bucket
 
 
 
-def index(request, flowertype_id=None):
+def index(request, flowertype_id=None, page_number = 1):
     if flowertype_id:
         flowertype = FlowerType.objects.get(id = flowertype_id)
         product = Product.objects.filter(type = flowertype)
     else:
         product = Product.objects.all()
-        
+    per_page = 3 
+    paginator = Paginator(product, per_page)
+    flowers_paginator  = paginator.page(page_number)
     
     context ={
         'title':'The Flowers Blog',
-        'flowers': product,
+        'flowers': flowers_paginator,
         'types' : FlowerType.objects.all()
         }
     return render(request, r"Example\index.html", context)
