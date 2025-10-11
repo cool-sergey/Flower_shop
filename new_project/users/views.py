@@ -23,7 +23,7 @@ def login_form(request):
     else:
         form = UserLoginForm()
     context = {'form': UserLoginForm()}
-    return render(request, r'Users\login.html', context)
+    return render(request, r'Users/login.html', context)
 
 def reg_form(request):
     if request.method == 'POST':
@@ -35,7 +35,7 @@ def reg_form(request):
     else:
         form = UserRegistrationForm()
     context = {'form': form}
-    return render(request, r'Users\reg.html',context)
+    return render(request, r'Users/reg.html',context)
 
 @login_required
 def profile(request):
@@ -62,7 +62,7 @@ def profile(request):
         'total_quantity':total_quantity
         
         }
-    return render(request, r'Users\profile.html', context)
+    return render(request, r'Users/profile.html', context)
 
 
 @login_required

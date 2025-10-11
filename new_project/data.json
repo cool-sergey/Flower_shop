@@ -1,0 +1,307 @@
+[
+    {
+        "model": "example.flowertype",
+        "pk": 1,
+        "fields": {
+            "name": "Весенние",
+            "description": "Весенние цветы"
+        }
+    },
+    {
+        "model": "example.flowertype",
+        "pk": 2,
+        "fields": {
+            "name": "Летние",
+            "description": "Летние цветы"
+        }
+    },
+    {
+        "model": "example.flowertype",
+        "pk": 3,
+        "fields": {
+            "name": "Зимние",
+            "description": "Цветы, у которых сезон зимой"
+        }
+    },
+    {
+        "model": "example.flowertype",
+        "pk": 4,
+        "fields": {
+            "name": "Осенние",
+            "description": "Цветы, у которых сезон осенью"
+        }
+    },
+    {
+        "model": "example.flowertype",
+        "pk": 5,
+        "fields": {
+            "name": "Круглогодичные",
+            "description": "Цветы которые не важен период"
+        }
+    },
+    {
+        "model": "example.product",
+        "pk": 1,
+        "fields": {
+            "name": "Подсолнух",
+            "description": "Крутой, позитивный цветок",
+            "price": "100.00",
+            "quantity": 10,
+            "image": "flowers_images/128.jpg",
+            "type": 2
+        }
+    },
+    {
+        "model": "example.product",
+        "pk": 2,
+        "fields": {
+            "name": "Зеленая орхидея",
+            "description": "Цветок зеленого цвета",
+            "price": "9.00",
+            "quantity": 10,
+            "image": "flowers_images/flower1.jpg",
+            "type": 5
+        }
+    },
+    {
+        "model": "example.product",
+        "pk": 3,
+        "fields": {
+            "name": "Гладиолус",
+            "description": "потому что",
+            "price": "7.00",
+            "quantity": 15,
+            "image": "flowers_images/flower2.jpg",
+            "type": 2
+        }
+    },
+    {
+        "model": "example.product",
+        "pk": 4,
+        "fields": {
+            "name": "Лагурус",
+            "description": "Цветы похожие на хвосты зайчиков",
+            "price": "5.00",
+            "quantity": 10,
+            "image": "flowers_images/flower3.jpg",
+            "type": 2
+        }
+    },
+    {
+        "model": "example.product",
+        "pk": 5,
+        "fields": {
+            "name": "Хризантема одноголовая",
+            "description": "У цветка одна голова",
+            "price": "11.00",
+            "quantity": 13,
+            "image": "flowers_images/flower4.jpg",
+            "type": 4
+        }
+    },
+    {
+        "model": "example.product",
+        "pk": 6,
+        "fields": {
+            "name": "Гортензия лимонная",
+            "description": "Красивый цветок для сада",
+            "price": "10.00",
+            "quantity": 5,
+            "image": "flowers_images/flower5.jpg",
+            "type": 2
+        }
+    },
+    {
+        "model": "example.bucket",
+        "pk": 4,
+        "fields": {
+            "user": 7,
+            "product": 4,
+            "quantity": 2,
+            "created_timestamp": "2025-09-11T10:34:58.925Z"
+        }
+    },
+    {
+        "model": "example.bucket",
+        "pk": 5,
+        "fields": {
+            "user": 7,
+            "product": 5,
+            "quantity": 2,
+            "created_timestamp": "2025-09-11T10:34:59.747Z"
+        }
+    },
+    {
+        "model": "example.bucket",
+        "pk": 6,
+        "fields": {
+            "user": 7,
+            "product": 1,
+            "quantity": 11,
+            "created_timestamp": "2025-09-11T12:00:59.256Z"
+        }
+    },
+    {
+        "model": "example.bucket",
+        "pk": 7,
+        "fields": {
+            "user": 7,
+            "product": 2,
+            "quantity": 2,
+            "created_timestamp": "2025-09-11T12:00:59.907Z"
+        }
+    },
+    {
+        "model": "example.bucket",
+        "pk": 8,
+        "fields": {
+            "user": 7,
+            "product": 3,
+            "quantity": 2,
+            "created_timestamp": "2025-09-11T12:01:00.496Z"
+        }
+    },
+    {
+        "model": "example.bucket",
+        "pk": 9,
+        "fields": {
+            "user": 7,
+            "product": 6,
+            "quantity": 1,
+            "created_timestamp": "2025-09-11T12:01:01.101Z"
+        }
+    },
+    {
+        "model": "users.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$D6OwKkv9pyINejNX0Lfiey$jgykZZ5c67FucAdVd+0DvGI8RLWVE2JBOU8si0QYu94=",
+            "last_login": "2025-09-16T11:30:56.340Z",
+            "is_superuser": true,
+            "username": "admin",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-08-03T10:01:18Z",
+            "image": "user_images/3Безымянный.png",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.user",
+        "pk": 2,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$24EoiqIJqXEVJuRU2TlFwx$w9yKcQCxnIYFKpiFO53wges7PvVPmGLqgFYaWeUqZ84=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "sergey",
+            "first_name": "",
+            "last_name": "",
+            "email": "chmonya@gmail.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2025-08-16T17:57:49.296Z",
+            "image": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.user",
+        "pk": 3,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$594SzFQf5QA7GSHPcI1jmh$qycpTCaty7hvSanEl9Soc72pTSgWeQlD/7EmgwWV8wM=",
+            "last_login": "2025-08-16T18:01:42.196Z",
+            "is_superuser": false,
+            "username": "sergey2",
+            "first_name": "",
+            "last_name": "",
+            "email": "loh20@gmail.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2025-08-16T18:01:20.283Z",
+            "image": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.user",
+        "pk": 4,
+        "fields": {
+            "password": "",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "admi",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2025-09-05T13:31:45.829Z",
+            "image": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.user",
+        "pk": 5,
+        "fields": {
+            "password": "",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "admini",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2025-09-05T13:33:55.939Z",
+            "image": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.user",
+        "pk": 6,
+        "fields": {
+            "password": "",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "administr",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2025-09-05T13:34:06.760Z",
+            "image": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.user",
+        "pk": 7,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$2qCkAyZCc2AwaSP4NImosU$2zQhbQ0qmkl7DoMjrmZP9J6l+uAypY1rk1SCzu9n7tU=",
+            "last_login": "2025-09-16T13:11:08.365Z",
+            "is_superuser": false,
+            "username": "Sergey4",
+            "first_name": "",
+            "last_name": "",
+            "email": "Sergey4@gmail.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2025-09-05T22:21:12.186Z",
+            "image": "user_images/e4d116770521fbfa681bfd54c038c5a6.jpg",
+            "groups": [],
+            "user_permissions": []
+        }
+    }
+]

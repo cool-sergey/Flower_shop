@@ -23,7 +23,7 @@ def index(request, flowertype_id=None, page_number = 1):
         'flowers': flowers_paginator,
         'types' : FlowerType.objects.all()
         }
-    return render(request, r"Example\index.html", context)
+    return render(request, r"Example/index.html", context)
 #тртетий арг. чтобы можно было встялять данные с помощью слвоворя сразу в шиетмель страницу
 
 def about(request, name, age):
@@ -33,9 +33,9 @@ def about(request, name, age):
             <p>Возраст: {age}</p>
     """)
 def simple(request):
-    return render(request,r"Example\simple.html")
+    return render(request,r"Example/simple.html")
 def second(request):
-    return render(request,r"Example\list.html")
+    return render(request,r"Example/list.html")
 
 @login_required
 def basket_add(request,product_id):
